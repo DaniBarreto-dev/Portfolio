@@ -1,0 +1,107 @@
+/*Limpando as definições e padroes do navegador*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+    /*Arrumando o scrol e deixando suave*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*Definindo as cores*/
+
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+  --navbar: rgba(15, 23, 42, 0.8);
+  --shadow: rgba(79, 70, 229, 0.3);
+
+}
+
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+/*Menu de navegação, com z-index qque manda em quem fica na frente e um padding de 1.5 pro espaçamento interno */
+.navegação{
+   position: fixed;
+   top: 0;
+   background: var(--navbar);
+   width: 100%;
+   z-index: 100;
+   padding: 1.5rem;
+}
+
+/*Centralizei o menu e removi o list-style*/
+.menu{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+/*Removi a decoração do texto e adicionei espaçamento entre as letras*/
+.menu-link{
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/*Animação after -> before*/
+/*Adicionando um transition para controlar o tempo e colocando quando o mouse passar por cima da palavra a largura aumenta*/
+/*Fazendo assim uma animação*/
+
+.menu-link::after{
+    content: '';
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover:after {
+    width: 100%;
+}
+
+/*Arrumando a foto da main*/
+
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Foto-de-perfil{
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    border-radius: 50%;
+    border: var(--vidro);
+}
+
+.titulo-main{
+    font-size: 3.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.cabecalho-p{
+    font-size: 1.5rem;
+    color: var(--claro);
+}
